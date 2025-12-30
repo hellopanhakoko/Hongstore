@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shensi Store | Select Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#6366f1;
+    --pink:#ec4899;
+    --dark:#0f172a;
+    --glass:rgba(255,255,255,0.08)
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+body{
+    font-family:'Roboto',sans-serif;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top,#1e293b,#020617),
+        linear-gradient(135deg,var(--primary),var(--pink));
+    color:white;
+    animation:bgmove 10s linear infinite
+}
+
+@keyframes bgmove{
+    0%{background-position:0 0,0 0}
+    50%{background-position:100% 100%,100% 100%}
+    100%{background-position:0 0,0 0}
+}
+
+/* HEADER */
+header{
+    padding:1.2rem;
+    backdrop-filter:blur(8px)
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:1rem
+}
+
+.header-inner img{
+    width:52px;
+    transition:transform .3s
+}
+
+.header-inner img:hover{
+    transform:scale(1.1)
+}
+
+.header-inner h1{
+    font-size:1.8rem
+}
+
+/* BANNER */
+.banner{
+    max-width:1200px;
+    margin:1.5rem auto;
+    padding:0 1rem
+}
+
+.banner img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,.4)
+}
+
+/* GAMES (UNCHANGED) */
+.games{
+    max-width:1200px;
+    margin:auto;
+    padding:1rem
+}
+
+.games h2{
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:2rem
+}
+
+.game-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    gap:1.5rem
+}
+
+.game-card{
+    position:relative;
+    height:200px;
+    border-radius:18px;
+    overflow:hidden;
+    cursor:pointer;
+    background:var(--glass);
+    box-shadow:0 10px 25px rgba(0,0,0,.5);
+    transition:.4s
+}
+
+.game-card:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 20px 40px rgba(0,0,0,.7)
+}
+
+.game-card img{
+    width:100%;
+    height:80%;
+    object-fit:cover
+}
+
+.game-info{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:20%;
+    background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.5));
+    display:flex;
+    align-items:center;
+    justify-content:center
+}
+
+.game-info h3{
+    font-size:1rem;
+    font-weight:700
+}
+
+.badge{
+    position:absolute;
+    top:8px;
+    left:8px;
+    background:var(--primary);
+    color:white;
+    font-size:.7rem;
+    padding:.2rem .5rem;
+    border-radius:6px;
+    font-weight:700;
+    box-shadow:0 5px 10px rgba(0,0,0,.4)
+}
+
+/* FOOTER */
+.site-footer{
+    margin-top:3rem;
+    padding:2rem 1rem;
+    text-align:center;
+    background:rgba(255,255,255,0.04);
+    backdrop-filter:blur(10px);
+    border-top:1px solid rgba(255,255,255,0.08);
+    font-size:.85rem;
+    color:#c7c9d1
+}
+
+.footer-links{
+    margin-bottom:.6rem
+}
+
+.footer-links a{
+    color:#c7c9d1;
+    text-decoration:none;
+    margin:0 .3rem;
+    transition:.2s
+}
+
+.footer-links a:hover{
+    color:white
+}
+
+.footer-copy{
+    margin-bottom:.8rem;
+    font-size:.8rem
+}
+
+.footer-pay{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:.5rem;
+    font-size:.8rem
+}
+
+.footer-pay img{
+    height:26px
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+        <img src="/static/images/dexdexx.PNG">
+        <h1>Shensi Store</h1>
+    </div>
+</header>
+
+<section class="banner">
+    <img src="/static/images/hello1x.jpg">
+</section>
+
+<section class="games">
+    <h2>🎮 Choose Your Game</h2>
+
+    <div class="game-grid">
+        <div class="game-card" onclick="location.href='/mlbb_topup'">
+            <div class="badge">⚡ Instant Delivery</div>
+            <img src="/static/images/mlbb.jpg">
+            <div class="game-info"><h3>Mobile Legends</h3></div>
+        </div>
+
+        <div class="game-card" onclick="location.href='/ff_topup'">
+            <div class="badge">⚡ Instant Delivery</div>
+            <img src="/static/images/freefire.jpg">
+            <div class="game-info"><h3>Free Fire</h3></div>
+        </div>
+
+        <div class="game-card">
+            <div class="badge">⚡ Instant Delivery</div>
+            <img src="/static/images/pubg.jpg">
+            <div class="game-info"><h3>PUBG Mobile</h3></div>
+        </div>
+
+        <div class="game-card">
+            <div class="badge">⚡ Instant Delivery</div>
+            <img src="/static/images/roblox.jpg">
+            <div class="game-info"><h3>Roblox</h3></div>
+        </div>
+
+        <div class="game-card">
+            <div class="badge">⚡ Instant Delivery</div>
+            <img src="/static/images/lol.jpg">
+            <div class="game-info"><h3>League of Legends</h3></div>
+        </div>
+
+        <div class="game-card">
+            <div class="badge">⚡ Instant Delivery</div>
+            <img src="/static/images/codm.jpg">
+            <div class="game-info"><h3>COD Mobile</h3></div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-links">
+        <a href="#">Contact Us</a> •
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms and Condition</a>
+    </div>
+
+    <div class="footer-copy">
+        Copyright © Shensi Store. All Rights Reserved.
+    </div>
+
+    <div class="footer-pay">
+        <span>Accept Payment:</span>
+        <img src="/static/images/bakong.webp" alt="BAKONG">
+    </div>
+</footer>
+
+</body>
+</html>
