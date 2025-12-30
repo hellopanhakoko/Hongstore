@@ -4,5 +4,3 @@ qrcode==7.4.2
 Pillow==10.4.0
 requests==2.32.1
 bakong_khqr
-
-requirements.txt
